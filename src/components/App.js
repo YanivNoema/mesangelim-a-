@@ -9,6 +9,24 @@ import Home from '../components/Home';
 import Singles from '../components/Singles';
 import { store } from '../store';
 import { push } from 'react-router-redux';
+import * as firebase from "firebase";
+
+export const firebaseConfig = {
+  apiKey: 'AIzaSyB2RMYFAl9hwGI63hbRq9sChng3mwn8LWQ',
+  authDomain: 'easysend-website.firebaseapp.com',
+  databaseURL: 'https://easysend-website.firebaseio.com',
+  storageBucket: "easysend-website.appspot.com",
+  projectId: 'easysend-website',
+  messagingSenderId: '1088779523001'
+};
+
+const FirebaseConfig = {
+  apiKey: "AIzaSyDxjATtQGZksO9RMbkS5r2f5lkZQa89kuE",
+  authDomain: 'mesangleim-app.firebaseapp.com',
+  projectId: 'mesangleim-app',
+};
+
+firebase.initializeApp(FirebaseConfig);
 
 const mapStateToProps = state => {
   return {
