@@ -1,0 +1,23 @@
+.single-title {
+    font-weight: 500;
+    line-height: 1.1;
+    font-size: 30px;
+}
+
+.single-line-box {
+    margin: 5px 0;
+}
+
+.single-line-title {
+    font-size: 20px;
+    color: #e68a00;
+    display: inline-block;
+}
+
+.single-line-text {
+    display: inline-block;
+    margin: 5px 5px;
+    font-size: 14px;
+    font-weight: 400;
+    color: #08304a;
+}

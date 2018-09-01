@@ -1,0 +1,74 @@
+.filter {
+	display: flex;
+	height: 100%;
+	justify-content: center;
+	align-items: flex-end;
+	flex-direction: row;
+	direction: rtl;
+}
+
+.filter-box {
+    padding: 24px 50px 24px 40px;
+    margin: 0px 8px;
+    border: none;
+    border-radius: 34px;
+    background: #30cc72 url(http://www.mesangelim.co.il/wp-content/themes/direct/img//glow.png) 6px 7px no-repeat;
+	position: relative;
+    top: 25px;
+    width: 200px;
+	padding: 13px;
+	background-color: #F5761F !important;
+	text-align: center;
+}
+
+::placeholder {
+	color: #fff;
+	text-align: center;
+	font-size: 16px;
+}
+
+.filter-box:after {
+	content: "";
+	display: block;
+	position: absolute;
+	width: 0;
+	height: 0;
+	border: 5px solid transparent;
+	border-top-color: #4B5468;
+	top: 20px;
+	right: 9px;
+}
+
+.submit {
+	position: relative;
+	top: 26px;
+	height: 69px;
+	border-radius: 50%;
+	background-color: #F5761F;
+	color: #FFFFFF;
+	font-size: 16px;
+	padding: 15px 25px;
+	border: none;
+}
+
+select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    text-indent: 1px;
+	text-overflow: '';
+	text-align-last: center;
+}
+
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+    outline: none;
+}
+
+.filter-title {
+	font-weight: 500;
+	line-height: 1.1;
+	text-align: center;
+	font-size: 30px;
+}

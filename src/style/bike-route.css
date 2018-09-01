@@ -1,0 +1,87 @@
+
+.bike-route-container {
+    width: 88vw;
+}
+
+.difficulty-text {
+    font-size: 14px;
+    color: #859baa;
+    line-height: 24px;
+    padding: 0px 20px;
+    margin-top: 15px; 
+}
+
+.bike-route {
+    border-radius: 12px;
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(1,1,1,.1);
+    overflow: hidden;
+    text-align: center;
+    padding-bottom: 30px;
+    margin-bottom: 20px;
+    width: 263px;
+    margin-left: 15px;
+    margin-right: 15px;
+    height: 409px;
+    display: inline-block;
+}
+
+.difficulty-line {
+    width: 30px;
+    height: 4px;
+    border-radius: 2px;
+    background-color: #30cc72;
+    display: block;
+    margin: 5px auto 15px;
+}
+
+.moderate {
+    background-color: rgb(241, 241, 31);
+}
+
+.hard {
+    background-color: red;
+}
+
+.pin {
+    display: inline-block;
+    width: 49px;
+    height: 61px;
+    line-height: 56px;
+    text-align: center;
+    margin: -28px 0px 10px;
+}
+
+.show {
+    animation: showSlow .2s .3s both;
+}
+
+@keyframes showSlow {
+    0% {
+      opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+  }
+
+  .hide {
+    animation: hideSlow .2s .3s both;
+}
+
+@keyframes hideSlow {
+    0% {
+      opacity: 1;
+    }
+
+    100% {
+        opacity: 0
+        ;
+    }
+  }
+
+
+  .img-preivew {
+      margin-left: -15px;
+  }

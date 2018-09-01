@@ -1,0 +1,16 @@
+.featured-item-box {
+    direction: rtl;
+}
+
+.featured-title {
+    font-size: 30px;
+    color: rgb(8, 48, 74);
+}
+
+.featured-descrition {
+    font-size: 14px;
+}
+
+.featured-item {
+    padding: 15px 50px;
+}
