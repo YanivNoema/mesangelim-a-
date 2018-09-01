@@ -8,6 +8,7 @@ ToDo:
 
 2. Design:
     - Menu top hover
+    - Jumping signlePreview in the featured line
 
 3. logic:
     - Use redux in Filter.js component
