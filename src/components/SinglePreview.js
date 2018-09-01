@@ -1,28 +1,18 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import agent from '../agent';
-import { connect } from 'react-redux';
+import { DEFAULT_SINGLE_IMG, MODERATE_PIN_IMG, HARD_PIN_IMG, EASY_PIN_IMG  } from '../constants/defines'
 import '../../src/style/bike-route.css';
 import '../../src/style/global.css';
 import '../../src/style/animate.css';
 
-let moderatePin = "http://www.mesangelim.co.il/wp-content/themes/direct-child/img/pin_normal.png";
-let hardPin = "http://www.mesangelim.co.il/wp-content/themes/direct-child/img/pin_hard.png";
-let easyPin = "http://www.mesangelim.co.il/wp-content/themes/direct-child/img/pin_easy.png";
-
-
-const mapDispatchToProps = dispatch => ({
-});
-
-class ArticlePreview extends React.Component {
+class SinglePreview extends React.Component {
 
   constructor(props) {
     super(props);
     this.numCols = props.numCols;
     this.state = {
       appClass: `bike-route col-md-${this.numCols}`
-  };
-
+    };
   }
 
   componentDidMount() {
@@ -34,21 +24,21 @@ class ArticlePreview extends React.Component {
   }
 
   getDefaultImage() {
-    return 'http://www.mesangelim.co.il/wp-content/uploads/2016/05/mesangelim-icon1-263x180.png';
+    return DEFAULT_SINGLE_IMG;
   }
 
   render() {
     return (
       <div className={this.state.appClass}>
-        <Link to={{ pathname: `/singles/${this.props.article.title}`, state: { single: this.props.article, area: "שפלת יהודה", location: "יער בן שמן" } }}>
+        <Link to={{ pathname: `/singles/${this.props.article.title}`, state: { single: this.props.article, area: this.props.area, location: this.props.location } }}>
           <div>
             <img class="img-preivew" src={this.props.article.image || this.getDefaultImage()} alt={this.props.article.imageAlt} />
           </div>
           <div class="wrapper-bounce">
             <span class="pin">
-              <img src={this.props.article.difficulty === "moderate" ? moderatePin
-                : this.props.article.difficulty === "hard" ? hardPin
-                  : easyPin} />
+              <img src={this.props.article.difficulty === "moderate" ? MODERATE_PIN_IMG
+                : this.props.article.difficulty === "hard" ? HARD_PIN_IMG
+                  : EASY_PIN_IMG} />
             </span>
           </div>
           <div>
@@ -67,4 +57,4 @@ class ArticlePreview extends React.Component {
   }
 }
 
-export default connect(() => ({}), mapDispatchToProps)(ArticlePreview);
+export default SinglePreview;

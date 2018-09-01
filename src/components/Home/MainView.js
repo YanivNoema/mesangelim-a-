@@ -1,12 +1,9 @@
 import React from 'react';
-import { connect } from 'react-redux';
-import * as data from '../../../src/data.json';
 import FeaturedItem from '../FeaturedItem'
-import ArticleList from '../ArticleList';
-
-
-const ALL_RESULTS = 'all';
-const EMPTY_RESULTS = '';
+import SingleList from '../SingleList';
+import * as data from '../data/data.json';
+import { connect } from 'react-redux';
+import { EMPTY_RESULTS, ALL_RESULTS } from '../../constants/defines.js';
 
 const flatten = arr => {
   var out = [];
@@ -20,16 +17,25 @@ const mapStateToProps = state => {
   const { search, area, location, difficulty } = state.forms.filter;
   return {
     filteredItems: filteredItems([area.value, location.value, difficulty.value, search.value], JSON.parse(JSON.stringify(data))),
-    featuredItem: featuredItem(data)
+    featuredItem: featuredItem(data),
+    showFeaturedItem: showFeaturedItem(area.value, location.value, difficulty.value, search.value),
+    currentArea: area.value,
+    currentLocation: location.value,
+    cuurentDifficulty: difficulty.value
   }
 };
+
+const showFeaturedItem = (area, location, difficulty, search) => {
+  return area === ALL_RESULTS &&
+    location === ALL_RESULTS &&
+    difficulty === ALL_RESULTS &&
+    search === EMPTY_RESULTS;
+}
+
 
 const featuredItem = data => {
   return data.items[0].items[0].items[0].items[0];
 }
-
-const mapDispatchToProps = dispatch => ({
-});
 
 const filteredItems = (values, data) => {
   let ret = data;
@@ -49,14 +55,16 @@ const filteredItems = (values, data) => {
   return ret;
 }
 
-
 const MainView = props => {
   return (
     <div className="col-md-12">
-      <FeaturedItem article={props.featuredItem}/>
-      <ArticleList articles={props.filteredItems}/>
+      {
+        props.showFeaturedItem &&
+        <FeaturedItem article={props.featuredItem} />
+      }
+      <SingleList articles={props.filteredItems} area={props.currentArea} location={props.currentLocation} difficulty={props.cuurentDifficulty} />
     </div>
   );
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(MainView);
+export default connect(mapStateToProps)(MainView);

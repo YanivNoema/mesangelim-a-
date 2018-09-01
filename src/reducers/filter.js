@@ -6,7 +6,6 @@ export default (state = {}, action) => {
 
   switch (action.type) {
     case SUBMIT_FILTER:
-    // debugger;
     return Object.assign({}, state, {
       search: action.text,
       location: action.location,

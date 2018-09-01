@@ -1,30 +1,19 @@
 import React from 'react';
 import '..\\style\\global.css';
 import '..\\style\\singles.css';
-
-
-const informationItems = {
-  "technicalDifficulty": "קושי טכני",
-  "physicalDifficulty": "קושי פיזי",
-  "climbingHeight": "גובה טיפוס מצטבר",
-  "singleDistance": "אורך מסלול",
-  "singleTime": "זמן",
-  "singleType": "סוג מסלול",
-  "singleDescription": "תיאור המסלול",
-  "directions": "הוראות הגעה",
-};
+import { informationItemsMap } from '../constants/defines';
 
 const Lines = props => {
   if (props.items) {
     return (
       props.items.map((item) => {
-        if (item.vlaue) {
+        if (item.value === '') {
           return '';
         }
         return (
           <div className="single-line-box rtl">
             <div className="single-line-title">
-              {informationItems[item.key]} :
+              {informationItemsMap[item.key]} :
             </div>
             <div className="single-line-text">
               {item.value}
@@ -42,13 +31,16 @@ class Singles extends React.Component {
   constructor(props) {
     super(props);
     const { single, area, location } = this.props.location.state;
-
     this.singleTitle = single.subtitle;
-
+    this.area = area;
+    this.location = location;
     this.items = [];
     for (var key in single.additionalInformation) {
       this.items.push({ key: key, value: single.additionalInformation[key] })
     }
+
+    // this.items.unshift({key: 'area', value: area});
+    // this.items.unshift({key: 'location', value: location});
   }
 
   render() {
@@ -58,7 +50,7 @@ class Singles extends React.Component {
           <div className="single-title">
             {this.singleTitle}
           </div>
-          <Lines items={this.items} />
+          <Lines items={this.items}/>
         </div>
         <div className="col-md-6"></div>
       </div>

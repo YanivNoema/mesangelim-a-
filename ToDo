@@ -1,0 +1,15 @@
+ToDo:
+
+1. Missing Elements:
+    - Search bar
+    - Innder pages
+    - Put images localy
+    - Opening image
+
+2. Design:
+    - Menu top hover
+
+3. logic:
+    - Use redux in Filter.js component
+    - Using redux in MainView.js implemented in a right way? 
+    - Fix location, area and diffuclty issue - need to know how we pull the data - in which stracture

@@ -1,18 +1,18 @@
-import ArticlePreview from './ArticlePreview';
+import SinglePreview from './SinglePreview';
 import React from 'react';
 import '../../src/style/bike-route.css';
 
-const ArticleList = props => {
+const SignleList = props => {
   if (!props.articles) {
     return (
-      <div className="article-preview">Loading...</div>
+      <div className="article-preview">בטעינה...</div>
     );
   }
 
   if (props.articles.length === 0) {
     return (
       <div className="article-preview">
-        No articles are here... yet.
+      איו כרגע פוסטים
       </div>
     );
   }
@@ -22,7 +22,7 @@ const ArticleList = props => {
       {
         props.articles.map(article => {
           return (
-            <ArticlePreview article={article} numCols="3"/>
+            <SinglePreview article={article} area={props.area} location={props.location} numCols="3"/>
           );
         })
       }
@@ -30,4 +30,4 @@ const ArticleList = props => {
   );
 };
 
-export default ArticleList;
+export default SignleList;

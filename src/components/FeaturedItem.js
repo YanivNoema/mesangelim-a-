@@ -1,5 +1,5 @@
 import React from 'react';
-import ArticlePreview from './ArticlePreview'
+import ArticlePreview from './SinglePreview'
 import '../../src/style/featured-item.css';
 
 const FeaturedItem = props => {
