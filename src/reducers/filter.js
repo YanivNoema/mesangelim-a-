@@ -1,9 +1,6 @@
-import {
-  SUBMIT_FILTER
-} from '../constants/actionTypes';
+import { SUBMIT_FILTER } from '../constants/actionTypes';
 
 export default (state = {}, action) => {
-
   switch (action.type) {
     case SUBMIT_FILTER:
     return Object.assign({}, state, {
