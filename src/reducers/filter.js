@@ -1,14 +1,16 @@
-import { SUBMIT_FILTER } from '../constants/actionTypes';
+import { RESET_FORM, FILTER_RESULT } from '../constants/actionTypes';
+import { INITIAL_STATE } from '../reducer'
 
-export default (state = {}, action) => {
+export default (state = INITIAL_STATE, action) => {
   switch (action.type) {
-    case SUBMIT_FILTER:
-    return Object.assign({}, state, {
-      search: action.text,
-      location: action.location,
-      diffculty: action.diffculty,
-      area: action.area
-    });
+    case FILTER_RESULT:
+      return Object.assign({}, state, {
+        area: action.area,
+        location: action.location,
+        difficulty: action.difficulty
+      })
+    case RESET_FORM:
+      return INITIAL_STATE
     default:
       return state;
   }

@@ -1,5 +1,5 @@
 import React from 'react';
-import ArticlePreview from './SinglePreview'
+import SinglePreview from './SinglePreview'
 import '../../src/style/featured-item.css';
 
 const FeaturedItem = props => {
@@ -12,7 +12,7 @@ const FeaturedItem = props => {
           <div className="featured-descrition">{props.article.additionalInformation.singleDescription}</div>
       </div>
         <div className="col-md-4">
-          <ArticlePreview article={props.article || ''} numCols="12"/>
+          <SinglePreview article={props.article || ''} numCols="12"/>
         </div>
       </div>
     </div>

@@ -15,3 +15,4 @@ ToDo:
     - Use redux in Filter.js component
     - Filter - will filter only on submit or dynamically?  
     - Fix location, area and diffuclty issue - need to know how we pull the data - in which stracture
+    - Make Filter.js generic

@@ -4,24 +4,17 @@ import SingleList from '../SingleList';
 import * as data from '../data/data.json';
 import { connect } from 'react-redux';
 import { EMPTY_RESULTS, ALL_RESULTS } from '../../constants/defines.js';
-
-const flatten = arr => {
-  var out = [];
-  for (var i = 0; i < arr.length; i++) {
-    out.push.apply(out, Array.isArray(arr[i]) ? flatten(arr[i]) : [arr[i]]);
-  }
-  return out;
-};
+import { flatten } from '../../common'
 
 const mapStateToProps = state => {
-  const { search, area, location, difficulty } = state.forms.filter;
+  const { search, area, location, difficulty } = state.mainView;
   return {
-    filteredItems: filteredItems([area.value, location.value, difficulty.value, search.value], JSON.parse(JSON.stringify(data))),
+    filteredItems: filteredItems([area, location, difficulty, search], JSON.parse(JSON.stringify(data))),
     featuredItem: featuredItem(data),
-    showFeaturedItem: showFeaturedItem(area.value, location.value, difficulty.value, search.value),
-    currentArea: area.value,
-    currentLocation: location.value,
-    cuurentDifficulty: difficulty.value
+    showFeaturedItem: showFeaturedItem(area, location, difficulty, search),
+    currentArea: area,
+    currentLocation: location,
+    cuurentDifficulty: difficulty
   }
 };
 

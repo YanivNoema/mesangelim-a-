@@ -9,4 +9,6 @@ export const FILTER_SEARCH = "FILTER_SEARCH";
 export const FILTER_AREA = "FILTER_AREA";
 export const FILTER_LOCATION = "FILTER_LOCATION";
 export const FILTER_DIFFCULTY = "FILTER_DIFFCULTY";
-export const SUBMIT_FILTER = "SUBMIT_FILTER";
+export const SUBMIT_FORM = "SUBMIT_FORM";
+export const RESET_FORM = "RESET_FORM";
+export const FILTER_RESULT = "FILTER_RESULT";
