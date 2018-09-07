@@ -6,7 +6,6 @@ import '../../src/style/global.css';
 import '../../src/style/animate.css';
 
 class SinglePreview extends React.Component {
-
   constructor(props) {
     super(props);
     this.numCols = props.numCols;

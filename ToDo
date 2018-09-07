@@ -12,6 +12,5 @@ ToDo:
     - Jumping signlePreview in the featured line
 
 3. logic:
-    - Use redux in Filter.js component
-    - Filter - will filter only on submit or dynamically?  
+    - Fix filter bug when changing child item and parent not support
     - Fix location, area and diffuclty issue - need to know how we pull the data - in which stracture
