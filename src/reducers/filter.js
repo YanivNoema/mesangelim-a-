@@ -1,4 +1,4 @@
-import { RESET_FORM, FILTER_RESULT } from '../constants/actionTypes';
+import { RESET_FORM, FILTER_RESULT, SUBMIT_FORM } from '../constants/actionTypes';
 import { INITIAL_STATE } from '../reducer'
 
 export default (state = INITIAL_STATE, action) => {
@@ -9,6 +9,8 @@ export default (state = INITIAL_STATE, action) => {
         location: action.location,
         difficulty: action.difficulty
       })
+    case SUBMIT_FORM:
+      return INITIAL_STATE;
     case RESET_FORM:
       return INITIAL_STATE
     default:

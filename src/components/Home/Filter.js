@@ -10,9 +10,9 @@ const mapStateToProps = state => {
   const { area, location, difficulty } = state.filter;
   const ret = filterElment([area || ALL_RESULTS, location || ALL_RESULTS, difficulty || ALL_RESULTS], getData());
   return {
-    areaData: flatten(ret[AREA_INDEX]),
-    locationData: flatten(ret[LOCATION_INDEX]),
-    difficultyLevelData: flatten(ret[DIFFICULTY_INDEX])
+    areaData: JSON.parse(JSON.stringify(flatten(ret[AREA_INDEX]))),
+    locationData: JSON.parse(JSON.stringify(flatten(ret[LOCATION_INDEX]))),
+    difficultyLevelData: JSON.parse(JSON.stringify(flatten(ret[DIFFICULTY_INDEX])))
   }
 };
 
@@ -38,7 +38,6 @@ const filterElment = (values, items) => {
   values.forEach((value, index) => {
     if (value === ALL_RESULTS) {
       filterAllResultStep(index);
-      debugger;
       runnerItems = flatten(runnerItems.map(item => item.items));
     } else {
       ret.push(runnerItems.filter(item => item.name === value).map(item => ({ name: item.displayName, value: item.name })));
@@ -110,8 +109,8 @@ class Filter extends React.Component {
                 return <option key={key} value={e.value}>{e.name}</option>;
               })}
             </select>
-            <button class="submit" type="button" onClick={this.submit}>סנן</button>
-            <button class="submit" type="button" onClick={this.reset}>נקה</button>
+            <button class="action-button" type="button" onClick={this.submit}>סנן</button>
+            <button class="action-button" type="button" onClick={this.reset}>נקה</button>
           </form >
         </div>
       </div>
