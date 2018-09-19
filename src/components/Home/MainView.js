@@ -8,6 +8,7 @@ import { flatten } from '../../common'
 
 const mapStateToProps = state => {
   const { search, area, location, difficulty } = state.mainView;
+  debugger;
   return {
     filteredItems: filteredItems([area, location, difficulty, search], JSON.parse(JSON.stringify(data))),
     featuredItem: featuredItem(data),
@@ -34,6 +35,7 @@ const filteredItems = (values, data) => {
   let ret = data;
   values.forEach((value, index) => {
     if (index + 1 === values.length) {
+      debugger;
       ret = ret.items.filter(term => term.title.includes(value) || term.subtitle.includes(value));
       return ret;
     } else if (value === EMPTY_RESULTS || value === ALL_RESULTS) {
